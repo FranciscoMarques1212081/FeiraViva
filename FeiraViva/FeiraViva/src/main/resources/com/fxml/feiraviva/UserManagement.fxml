@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.layout.StackPane?>
+<BorderPane fx:id="panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" styleClass="borderPaneBackground" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.feiraviva.Controller.UserManagementController">
+
+    <left>
+        <AnchorPane fx:id="sidebar" prefHeight="400.0" prefWidth="150.0" styleClass="anchorPaneSidebar" stylesheets="@../stylesheet.css" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fx:id="logoImage" fitHeight="140.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Images/feira_viva.png" />
+                    </image>
+                </ImageView>
+
+                <Button fx:id="homepageButton" layoutX="30.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#onHomePageButtonClick" prefWidth="100.0" stylesheets="@../stylesheet.css" text="Página Inicial" />
+                <Button fx:id="dashboardButton" layoutX="30.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#onDashboardButtonClick" prefWidth="100.0" stylesheets="@../stylesheet.css" text="Dashboard" />
+                <Button fx:id="settingsButton" layoutX="30.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#onSettingsButtonClick" prefWidth="100.0" stylesheets="@../stylesheet.css" text="Settings" />
+                <Button fx:id="logoutButton" layoutX="30.0" layoutY="365.0" mnemonicParsing="false" onMouseClicked="#onLogoutButtonClick" prefWidth="100.0" stylesheets="@../stylesheet.css" text="Logout" />
+            </children>
+        </AnchorPane>
+    </left>
+    <center>
+        <StackPane alignment="CENTER">
+         <AnchorPane prefHeight="700.0" prefWidth="850.0" BorderPane.alignment="CENTER">
+            <children>
+                <!-- Título da secção -->
+                <Label alignment="CENTER" layoutX="30.0" layoutY="20.0" prefHeight="40.0" prefWidth="800.0" stylesheets="@../stylesheet.css" text="Gestão de Utilizadores">
+                    <font>
+                        <Font name="System Bold" size="25.0" />
+                    </font>
+                </Label>
+
+                <!-- Tabela de utilizadores -->
+                <TableView fx:id="usersTable" layoutX="17.0" layoutY="81.0" prefHeight="365.0" prefWidth="800.0" styleClass="tableView" stylesheets="@../stylesheet.css">
+                    <columns>
+                        <TableColumn fx:id="colId" prefWidth="40.0" text="ID" />
+                        <TableColumn fx:id="colNome" prefWidth="140.0" text="Nome" />
+                        <TableColumn fx:id="colEmail" prefWidth="160.0" text="Email" />
+                        <TableColumn fx:id="colPerfil" prefWidth="168.0" text="Perfil" />
+                        <TableColumn fx:id="colNotas" prefWidth="112.0" text="Notas" />
+                        <TableColumn fx:id="colImagem" prefWidth="173.0" text="Imagem" />
+                    </columns>
+                </TableView>
+
+                <!-- Formulário para adicionar/editar utilizador -->
+                <Label layoutX="32.0" layoutY="475.0" prefHeight="30.0" prefWidth="120.0" text="Nome:">
+                    <font>
+                        <Font name="System" size="18.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="nomeField" layoutX="100.0" layoutY="475.0" prefHeight="30.0" prefWidth="200.0" styleClass="textField" stylesheets="@../stylesheet.css" />
+
+                <Label layoutX="32.0" layoutY="515.0" prefHeight="30.0" prefWidth="120.0" text="Email:">
+                    <font>
+                        <Font name="System" size="18.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="emailField" layoutX="100.0" layoutY="515.0" prefHeight="30.0" prefWidth="200.0" styleClass="textField" stylesheets="@../stylesheet.css" />
+
+                <Label layoutX="331.0" layoutY="475.0" prefHeight="30.0" prefWidth="61.0" text="Senha:">
+                    <font>
+                        <Font name="System" size="18.0" />
+                    </font>
+                </Label>
+                <PasswordField fx:id="senhaField" layoutX="401.0" layoutY="475.0" prefHeight="30.0" prefWidth="200.0" styleClass="textField" stylesheets="@../stylesheet.css" />
+
+                <Label layoutX="334.0" layoutY="515.0" prefHeight="30.0" prefWidth="55.0" text="Perfil:">
+                    <font>
+                        <Font name="System" size="18.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="perfilBox" layoutX="401.0" layoutY="515.0" prefHeight="30.0" prefWidth="200.0" promptText="Selecione o perfil" styleClass="textField" stylesheets="@../stylesheet.css" />
+
+                <Label layoutX="32.0" layoutY="555.0" prefHeight="30.0" prefWidth="120.0" text="Notas:">
+                    <font>
+                        <Font name="System" size="18.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="notasField" layoutX="100.0" layoutY="555.0" prefHeight="30.0" prefWidth="200.0" styleClass="textField" stylesheets="@../stylesheet.css" />
+
+                <Label layoutX="32.0" layoutY="595.0" prefHeight="30.0" prefWidth="78.0" text="Imagem:">
+                    <font>
+                        <Font name="System" size="18.0" />
+                    </font>
+                </Label>
+                <Button fx:id="escolherImagemBtn" layoutX="120.0" layoutY="595.0" prefHeight="30.0" prefWidth="180.0" stylesheets="@../stylesheet.css" text="Escolher Imagem" />
+                <ImageView fx:id="previewImageView" fitHeight="40.0" fitWidth="40.0" layoutX="372.0" layoutY="595.0" />
+
+                <!-- Botões de ação -->
+                <Button fx:id="adicionarBtn" layoutX="621.0" layoutY="475.0" prefHeight="30.0" prefWidth="180.0"
+                        stylesheets="@../stylesheet.css" text="Adicionar Utilizador"
+                        onAction="#onAdicionarBtn" />
+
+                <Button fx:id="editarBtn" layoutX="621.0" layoutY="515.0" prefHeight="30.0" prefWidth="180.0"
+                        stylesheets="@../stylesheet.css" text="Editar Selecionado"
+                        onAction="#onEditarBtn" />
+
+                <Button fx:id="removerBtn" layoutX="621.0" layoutY="555.0" prefHeight="30.0" prefWidth="180.0"
+                        stylesheets="@../stylesheet.css" text="Remover Selecionado"
+                        onAction="#onRemoverBtn" />
+
+            </children>
+         </AnchorPane>
+            <Label fx:id="backLabel"
+                   text="← Voltar"
+                   onMouseClicked="#onBackLabelClick"
+                   style="-fx-text-fill: #155e63; -fx-underline: true; -fx-cursor: hand; -fx-font-size: 13;"
+                   translateX="-370" translateY="-285" />
+        </StackPane>
+    </center>
+</BorderPane>

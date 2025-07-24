@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Main Borderpane start -->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" styleClass="borderPaneBackground" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.feiraviva.Controller.LoginController">
+
+    <bottom>
+        <Label prefHeight="16.0" stylesheets="@../stylesheet.css" text="FeiraViva © 2025" BorderPane.alignment="CENTER" />
+    </bottom>
+
+    <center>
+        <AnchorPane prefHeight="683.0" prefWidth="1001.0" BorderPane.alignment="CENTER">
+            <children>
+
+                <!-- Feira Viva logo -->
+                <ImageView fitHeight="256.0" fitWidth="367.0" layoutX="340.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Images/feira_viva.png" />
+                    </image>
+                </ImageView>
+
+                <TextField fx:id="loginUsernameTextField" layoutX="340.0" layoutY="294.0" onKeyPressed="#CheckEnterKey" prefHeight="30.0" prefWidth="320.0" promptText="Username" styleClass="textField" stylesheets="@../stylesheet.css">
+                    <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="TEXT" />
+                    </cursor>
+                </TextField>
+
+                <PasswordField fx:id="loginPasswordPasswordField" layoutX="340.0" layoutY="334.0" onKeyPressed="#CheckEnterKey" prefHeight="30.0" prefWidth="320.0" promptText="Password" styleClass="textField" stylesheets="@../stylesheet.css">
+                    <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                    </font>
+                </PasswordField>
+
+                <Label fx:id="invalidLoginCredentials" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="454.0" prefHeight="17.0" prefWidth="990.0" style="-fx-effect: dropshadow(three-pass-box,black,15,0,0,0);" textAlignment="CENTER" textFill="RED">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </Label>
+
+                <Button fx:id="loginButton" layoutX="395.0" layoutY="380.0" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="35.0" prefWidth="210.0" stylesheets="@../stylesheet.css" text="Login">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Button>
+
+                <StackPane layoutX="665.0" layoutY="289.0" prefHeight="40.0" prefWidth="35.0">
+                    <children>
+                        <ImageView fitHeight="40.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box,black,15,0,0,0);">
+                            <image>
+                                <Image url="@../Images/user.png" />
+                            </image>
+                            <effect>
+                                <ColorAdjust />
+                            </effect>
+                        </ImageView>
+                    </children>
+                </StackPane>
+
+                <StackPane layoutX="665.0" layoutY="329.0" prefHeight="40.0" prefWidth="35.0">
+                    <children>
+                        <ImageView fitHeight="40.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box,black,15,0,0,0);">
+                            <image>
+                                <Image url="@../Images/pass.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </StackPane>
+                <!-- The End of Login form -->
+
+            </children>
+        </AnchorPane>
+    </center>
+
+    <top>
+        <AnchorPane prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="cancelButton" alignment="CENTER" contentDisplay="CENTER" layoutX="945.0" layoutY="5.0" mnemonicParsing="false" onAction="#onCancelButtonClick" prefHeight="35.0" prefWidth="35.0" styleClass="buttonClose" stylesheets="@../stylesheet.css" text="X" textAlignment="CENTER">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Button>
+                <Button fx:id="dragButton" layoutX="5.0" layoutY="5.0" mnemonicParsing="false" onMouseDragged="#onDragButtonHandle" onMousePressed="#onDragButtonPress" prefHeight="35.0" prefWidth="915.0" styleClass="buttonDrag" stylesheets="@../stylesheet.css" />
+            </children>
+        </AnchorPane>
+    </top>
+
+</BorderPane>

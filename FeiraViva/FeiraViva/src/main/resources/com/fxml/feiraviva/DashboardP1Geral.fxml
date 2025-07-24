@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
+<BorderPane fx:id="panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" styleClass="borderPaneBackground" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.feiraviva.Controller.DashboardP1GeralController">
+    <left>
+        <AnchorPane fx:id="sidebar" prefHeight="400.0" prefWidth="150.0" styleClass="anchorPaneSidebar" stylesheets="@../stylesheet.css" BorderPane.alignment="CENTER_LEFT">
+            <children>
+                <ImageView fx:id="logoImage" fitHeight="140.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Images/feira_viva.png" />
+                    </image>
+                </ImageView>
+
+                <Button fx:id="homepageButton" layoutX="30.0" layoutY="115.0" mnemonicParsing="false" onAction="#onHomePageButtonClick" prefWidth="100.0" stylesheets="@../stylesheet.css" text="Página Inicial" />
+                <Button fx:id="dashboardButton" layoutX="30.0" layoutY="150.0" mnemonicParsing="false" onAction="#onDashboardButtonClick" prefWidth="100.0" stylesheets="@../stylesheet.css" text="Dashboard" />
+                <Button fx:id="settingsButton" layoutX="30.0" layoutY="185.0" mnemonicParsing="false" onAction="#onSettingsButtonClick" prefWidth="100.0" stylesheets="@../stylesheet.css" text="Settings" />
+                <Button fx:id="logoutButton" layoutX="30.0" layoutY="365.0" mnemonicParsing="false" onAction="#onLogoutButtonClick" prefWidth="100.0" stylesheets="@../stylesheet.css" text="Logout" />
+            </children>
+        </AnchorPane>
+    </left>
+    <center>
+        <StackPane alignment="CENTER">
+            <AnchorPane>
+                <children>
+                    <!-- Greeting e foto no canto superior direito -->
+                    <HBox alignment="CENTER_RIGHT" spacing="12" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="40.0">
+                        <children>
+                            <Label fx:id="greetingLbl" prefHeight="27.0" prefWidth="141.0"
+                                   style="-fx-font-size: 18px; -fx-font-weight: bold;" textAlignment="RIGHT"/>
+                            <ImageView fx:id="profileImageView" fitHeight="50" fitWidth="50" preserveRatio="true"/>
+                        </children>
+                    </HBox>
+                    <!-- Os 3 botões centrais -->
+                    <VBox alignment="CENTER" spacing="25.0" AnchorPane.bottomAnchor="0.0"
+                          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <children>
+                            <HBox alignment="CENTER" spacing="30.0">
+                                <children>
+                                    <Button fx:id="eficienciaOrganizacionalButton" mnemonicParsing="false"
+                                            onMouseClicked="#onEficienciaOrganizacionalButtonClick" prefHeight="45.0"
+                                            prefWidth="350.0" text="Eficiência organizacional"/>
+                                    <Button fx:id="receitasPropriasButton" mnemonicParsing="false"
+                                            onMouseClicked="#onReceitasPropriasButtonClick" prefHeight="45.0"
+                                            prefWidth="350.0" text="Receitas próprias"/>
+                                </children>
+                            </HBox>
+                            <HBox alignment="CENTER" spacing="30.0">
+                                <children>
+                                    <Button fx:id="satisfacaoColaboradoresButton" mnemonicParsing="false"
+                                            onMouseClicked="#onSatisfacaoColaboradoresButtonClick" prefHeight="45.0"
+                                            prefWidth="350.0" text="Satisfação dos colaboradores"/>
+                                </children>
+                            </HBox>
+                            <HBox alignment="CENTER" spacing="30.0"/>
+                        </children>
+                    </VBox>
+                </children>
+            </AnchorPane>
+            <!-- Label voltar sobreposto, como no DashboardP1.1 -->
+            <Label fx:id="backLabel"
+                   text="← Voltar"
+                   onMouseClicked="#onBackLabelClick"
+                   style="-fx-text-fill: #155e63; -fx-underline: true; -fx-cursor: hand; -fx-font-size: 13;"
+                   translateX="-336" translateY="-285" />
+        </StackPane>
+    </center>
+</BorderPane>
